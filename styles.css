@@ -1,0 +1,390 @@
+/* Pin Entry System Styles */
+.pin-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(240, 239, 235, 0.95); /* Light beige with opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.pin-container {
+  background: #fff1e6; /* Matches soft peach tones */
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pin-header {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #948575;
+}
+
+.pin-input {
+  font-size: 1.8rem;
+  padding: 12px;
+  width: 80%; /* Adjusted width */
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #c7c3be;
+  outline: none;
+}
+
+.pin-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.pin-button {
+  background: #e2ece9;
+  border: none;
+  padding: 12px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  color: #595552;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.pin-button:hover {
+  background: #c7d9d2;
+}
+
+.pin-button:active {
+  transform: scale(0.95);
+}
+
+.clear-button {
+  background: #fff1e6;
+}
+
+.clear-button:hover {
+  background: #f8dfcc;
+}
+
+.submit-button {
+  background: #948575;
+  color: #fff;
+}
+
+.submit-button:hover {
+  background: #7c6b61;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 1rem;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.error-message.visible {
+  opacity: 1;
+}
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0efeb; /* Light beige */
+  color: #595552;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+header {
+  background: #fff1e6;
+  padding: 30px 20px;
+  text-align: center;
+  color: #595552;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Ribbon Navigation */
+.ribbon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; /* Vertically center the text */
+  background: #e2ece9; /* Existing light green background */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.ribbon-item {
+  flex: 1; /* Makes each button take equal space */
+  text-align: center; /* Horizontally center the text */
+  background: none;
+  border: none;
+  color: #595552; /* Dark text color */
+  font-size: 1rem;
+  padding: 8px 0; /* Vertical padding only */
+  font-family: 'Poppins', sans-serif; /* Consistent font style */
+  cursor: pointer;
+}
+
+/* Section Headers */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #948575;
+  text-align: center;
+}
+
+/* Voice Recording Section */
+.voice-box {
+  background: #e2ece9; /* Subtle green */
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.voice-box p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #595552;
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Memories Section */
+.timeline-card {
+  background: #fff;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.timeline-image {
+  width: 100%;
+  height: auto;
+}
+
+.timeline-content {
+  padding: 15px;
+  text-align: center;
+  background: #948575;
+}
+
+.description {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+
+/* Date Styling */
+.date {
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center; /* Centers the date */
+  margin-bottom: 10px;
+  color: #f0efeb; /* Light beige text */
+}
+
+/* Description Styling */
+.description {
+  color: #fff; /* White text for contrast */
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.5; /* Adjust line height for better readability */
+  text-align: center; /* Centers the description text */
+}
+
+
+/* Bucket List Section */
+.bucket-list {
+  background: #f0efeb; /* Light beige */
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.bucket-list h2 {
+  font-family: 'Playfair Display', serif;
+  color: #948575; /* Brown */
+  margin-bottom: 20px;
+}
+
+.bucket-list-intro {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #595552;
+}
+
+.bucket-list-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bucket-item {
+  background: #fff1e6; /* Light peach */
+  border: 1px solid #e2ece9; /* Subtle green */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.bucket-item .icon {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.bucket-item p {
+  margin: 5px 0;
+}
+
+.bucket-item p strong {
+  font-size: 1.1rem;
+  color: #595552;
+}
+
+.bucket-item .description {
+  font-size: 0.9rem;
+  color: #948575;
+}
+
+.arrow {
+  background: #948575; /* Brown */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.arrow:hover {
+  background: #595552; /* Darker shade for hover */
+}
+
+/* Flipbook Section */
+.flipbook {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.flipbook-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.flipbook-arrow {
+  background: #948575;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.flipbook-arrow:hover {
+  background: #7b6356;
+}
+
+.flipbook-page {
+  background: #fff1e6;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.flipbook-page h3 {
+  font-size: 1.5rem;
+  color: #595552;
+}
+
+/* Popup for the message */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  max-width: 300px;
+}
+
+.popup-content p {
+  font-size: 1rem;
+  color: #595552;
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  background: #948575;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup.hidden {
+  display: none;
+}
