@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 16th, Love</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <div id="pin-overlay" class="pin-overlay">
+  <div id="pin-container" class="pin-container">
+    <h2 class="pin-header">Could you find the Code?</h2>
+    <input id="pin-input" class="pin-input" type="password" maxlength="4" readonly />
+    <div class="pin-buttons">
+      <button class="pin-button" onclick="appendDigit(1)">1</button>
+      <button class="pin-button" onclick="appendDigit(2)">2</button>
+      <button class="pin-button" onclick="appendDigit(3)">3</button>
+      <button class="pin-button" onclick="appendDigit(4)">4</button>
+      <button class="pin-button" onclick="appendDigit(5)">5</button>
+      <button class="pin-button" onclick="appendDigit(6)">6</button>
+      <button class="pin-button" onclick="appendDigit(7)">7</button>
+      <button class="pin-button" onclick="appendDigit(8)">8</button>
+      <button class="pin-button" onclick="appendDigit(9)">9</button>
+      <button class="pin-button clear-button" onclick="clearPin()">C</button>
+      <button class="pin-button" onclick="appendDigit(0)">0</button>
+      <button class="pin-button submit-button" onclick="submitPin()">✓</button>
+    </div>
+    <p id="error-message" class="error-message"></p>
+  </div>
+</div>
+
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header-content">
+      <h1>Happy Birthday Zikmik &lt;3</h1>
+      <p>Hope you like this little gift.</p>
+    </div>
+  </header>
+
+  <!-- Ribbon Navigation -->
+  <nav class="ribbon">
+    <button class="ribbon-item" onclick="scrollToSection('voice-recording')">Voice Recording</button>
+    <button class="ribbon-item" onclick="scrollToSection('memories')">Memories</button>
+    <button class="ribbon-item" onclick="scrollToSection('bucket-list')">Bucket List</button>
+    <button class="ribbon-item" onclick="scrollToSection('open-when')">Open When...</button>
+  </nav>
+
+  <!-- Voice Recording Section -->
+  <section id="voice-recording" class="section voice-recording">
+    <h2>A Short Message</h2>
+    <div class="voice-box">
+      <audio controls>
+        <source src="https://dl.dropboxusercontent.com/scl/fi/4i0nugwlfquwlmtgg6b2j/Gift.mp3?rlkey=liqjg9wu3klt3tgre8evgvmni&st=61pptpgh" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </section>
+
+<section id="memories" class="section memories">
+  <h2>Memories We Shared</h2>
+  <!-- First Memory -->
+  <div class="timeline-card">
+    <img class="timeline-image" src="https://i.postimg.cc/mgj1FLGk/IMG-20240815-WA0022-2.jpg" alt="Memory Image">
+    <div class="timeline-content">
+      <p class="date">15th August 2024</p>
+      <p class="description">First photo after being together. I will always cherish this day.</p>
+    </div>
+  </div>
+  <!-- Second Memory -->
+  <div class="timeline-card">
+    <img class="timeline-image" src="https://i.postimg.cc/vZYcyJ6s/IMG-20241008-WA0011-2.jpg" alt="Memory Image">
+    <div class="timeline-content">
+      <p class="date">7th October 2024</p>
+      <p class="description">One of my favourite memories of us. I want us to be this happy always.</p>
+    </div>
+  </div>
+  <!-- Third Memory (Poem) -->
+  <div class="timeline-card">
+    <img class="timeline-image" src="https://i.postimg.cc/tgbnsscL/IMG-20241221-112823-474-2.jpg" alt="Memory Image">
+    <div class="timeline-content">
+      <p class="date">Drop of love</p>
+      <p class="description">       
+        The drop where it all began,<br>
+        And the ocean where it ended.<br>
+        The blazing fire of God's plan,<br>
+        That even love left me stranded.<br><br>
+        The drop where it all began,<br>
+        And the storm when it rains.<br>
+        The thread that ties our hearts,<br>
+        Sure pulls harder than chains.<br><br>
+        The drop where it all began,<br>
+        And our love shall not falter.<br>
+        With you and only you my love,<br>
+        Let's start an endless balter.       
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Bucket List Section -->
+<section id="bucket-list" class="section bucket-list">
+  <h2>Our Bucket List</h2>
+  <div class="bucket-list-intro">
+    <p>Remember when I once mentioned about making a bucket list together? Well, that plan didn't work out. So, I decided to make a short bucket list here. This is just the beginning though. There are endless things that I want us to do together.</p>
+  </div>
+  <div class="bucket-list-carousel">
+    <button class="arrow left-arrow" onclick="previousItem()">&#8249;</button>
+    <div class="bucket-item">
+      <span class="icon">💭</span>
+      <p><strong id="bucket-title">Fulfil that dream I had</strong></p>
+      <p id="bucket-description" class="description">A placeholder description for now.</p>
+    </div>
+    <button class="arrow right-arrow" onclick="nextItem()">&#8250;</button>
+  </div>
+</section>
+
+ <!-- Open When -->
+ <section id="open-when" class="section flipbook">
+  <h2>Open When...</h2>
+  <div class="open-when-intro">
+    <p>(Click on them)</p>
+   </div>
+  <div class="flipbook-container">
+    <button class="flipbook-arrow left" onclick="flipPage(-1)">&#8592;</button>
+    <div class="flipbook-page" onclick="revealMessage()">
+      <h3 id="open-when-title"></h3>
+    </div>
+    <button class="flipbook-arrow right" onclick="flipPage(1)">&#8594;</button>
+  </div>
+
+  <!-- Popup for the message -->
+  <div id="message-popup" class="popup hidden">
+    <div class="popup-content">
+      <p id="open-when-message"></p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+</section>
+
+  
+  
+  
+  
+  <script src="script.js"></script>
+</body>
+</html>
